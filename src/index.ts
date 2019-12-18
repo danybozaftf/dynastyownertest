@@ -1,9 +1,16 @@
-import Express from "express";
-import { getCommits } from "./handlers";
-const app = Express();
+import Express from 'express'
+import cors from 'cors'
+import dotenv from 'dotenv'
+import { getCommits } from './handlers'
 
-app.get("/commits", getCommits);
+dotenv.config()
 
-app.listen(3000, () => {
-  console.log("App runing in port 3000");
-});
+const port = process.env.PORT || 8080
+
+const app = Express()
+app.use(cors())
+app.get('/commits', getCommits)
+
+app.listen(port, () => {
+  console.log(`App running on port ${port}`)
+})
