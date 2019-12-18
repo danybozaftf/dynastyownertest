@@ -10,7 +10,7 @@ import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
   styleUrls: ["./commits.component.css"]
 })
 export class CommitsComponent implements OnInit {
-  baseUrl: any = "http://localhost:3000";
+  baseUrl: any = "http://54.196.112.226:8080";
   httpParam = new HttpParams();
   httpHeader = new HttpHeaders();
   commitsData: any = [];
