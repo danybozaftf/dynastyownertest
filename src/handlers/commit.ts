@@ -1,15 +1,14 @@
-import { Request, Response, NextFunction } from "express";
-import * as connectivity from "../connectivity";
+import { Request, Response, NextFunction } from 'express'
+import * as connectivity from '../connectivity'
 
 export const getCommits = async (req: Request, res: Response) => {
   try {
-    const commits = await connectivity.getCommits();
+    const commits = await connectivity.getCommits()
     res.send({
-      object: "list",
-      data: commits,
-      total: 12
-    });
+      object: 'list',
+      data: commits
+    })
   } catch (err) {
-    res.status(404).send({ message: "Unable to fetch commits" });
+    res.status(404).send({ message: 'Unable to fetch commits' })
   }
-};
+}
